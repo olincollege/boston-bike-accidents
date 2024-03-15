@@ -1,13 +1,26 @@
+"""
+This module provides utility functions for data loading and processing.
+
+Functions:
+    pull_data(url, data_name): Loads data from a specified URL and saves it as a
+    JSON file.
+
+Usage:
+    To pull data from a URL:
+        >>> pull_data('https://example.com/data.json', 'example_data1_name')
+"""
+
 import json
 import urllib.request
+import pandas as pd
 
 
-def load_data(url, data_name):
+def pull_data(url, data_name="data"):
     """
-    Load data from a specified URL and save it as a JSON file.
+    Pull data from a specified URL and save it as a JSON file.
 
     Parameters:
-        url (str): The URL from which to load the data.
+        url (str): The URL from which to pull the data.
         data_name (str): The name of the JSON file to be saved.
 
     Returns:
@@ -17,3 +30,16 @@ def load_data(url, data_name):
     response_dict = json.loads(fileobj.read())
     with open(f"data/{data_name}.json", "w", encoding="utf-8") as file:
         json.dump(response_dict, file)
+
+
+def load_data(path):
+    """
+    Load data from a specified path and save it as a variable
+
+    Parameters:
+        path (str): The name of the file in the data folder
+
+    Returns:
+        The specified json file in pandas DataFrame format
+    """
+    return pd.read_json(f"data{path}")["result"]
