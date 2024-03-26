@@ -43,3 +43,19 @@ def load_data(path):
         The specified json file in pandas DataFrame format
     """
     return pd.read_json(f"data{path}")["result"]
+
+
+def get_bike_data(path):
+    """
+    Retrieves bike data from a specified URL, filters records for mode type 'bike',
+    and returns the filtered data as a pandas DataFrame.
+
+    Parameters:
+        URL (str): The URL from which to pull the data.
+
+    Returns:
+        pandas.DataFrame: DataFrame containing filtered bike data.
+    """
+    bike_data = pd.DataFrame(load_data(path)["records"])
+    bike_data = bike_data[bike_data["mode_type"] == "bike"].reset_index()
+    return bike_data
