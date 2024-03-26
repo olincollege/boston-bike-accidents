@@ -28,8 +28,9 @@ def pull_data(url, data_name="data"):
     """
     fileobj = urllib.request.urlopen(url)
     response_dict = json.loads(fileobj.read())
-    with open(f"data/{data_name}.json", "w", encoding="utf-8") as file:
+    with open(f"data/{data_name}", "w", encoding="utf-8") as file:
         json.dump(response_dict, file)
+    return data_name
 
 
 def load_data(path):
@@ -42,7 +43,7 @@ def load_data(path):
     Returns:
         The specified json file in pandas DataFrame format
     """
-    return pd.read_json(f"data{path}")["result"]
+    return pd.read_json(f"data/{path}")["result"]
 
 
 def get_bike_data(path):
