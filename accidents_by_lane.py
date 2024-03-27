@@ -199,8 +199,8 @@ def lanes_by_percent(bike_lane_df):
         "https://data.boston.gov/api/3/action/datastore_search?resource_id="
         + "6fa7932b-7bc8-42bc-9250-168d5f5dc1ad&limit=49000"
     )
-    helpers.pull_data(url, "/road_data")  # get all boston roads
-    road_data = pd.DataFrame(helpers.load_data("/road_data.json")["records"])
+    helpers.pull_data(url, "road_data.json")  # get all boston roads
+    road_data = pd.DataFrame(helpers.load_data("road_data.json")["records"])
     # find the total length
     total_length = road_data["SHAPESTLength"].astype(float).sum()
     # find total length of bike lanes by type
@@ -334,7 +334,7 @@ def visualize_data(bike_accidents_url, bike_lane_url):
             ha="center",
             va="bottom",
         )
-    plt.legend("Number of Accidents")
+    plt.legend(["Number of Accidents"])
     plt.title("Number of Bike Accidents by Category")
     plt.ylabel("Count")
     plt.xlabel("Lane Type")
