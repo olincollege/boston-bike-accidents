@@ -1,13 +1,23 @@
 """
-This module provides utility functions for data loading and processing.
+Module for handling data retrieval and manipulation.
+
+This module provides functions to pull data from a specified URL, save it as
+JSON, load data from a JSON file, and retrieve filtered bike data from a
+specified URL.
+
+Dependencies:
+    - json: Module for encoding and decoding JSON data.
+    - urllib.request: Module for opening URLs.
+    - Pandas: A powerful data manipulation library.
 
 Functions:
-    pull_data(url, data_name): Loads data from a specified URL and saves it as a
-    JSON file.
-
-Usage:
-    To pull data from a URL:
-        >>> pull_data('https://example.com/data.json', 'example_data1_name')
+    - pull_data(url, data_name="data"): Pulls data from a specified URL and
+    saves it as a JSON file.
+    - load_data(path): Loads data from a specified path and returns it as a
+    pandas DataFrame.
+    - get_bike_data(path): Retrieves bike data from a specified URL, filters
+    records for mode type 'bike', and returns the filtered data as a pandas
+    DataFrame.
 """
 
 import json
@@ -42,13 +52,13 @@ def load_data(path):
     Returns:
         The specified json file in pandas DataFrame format
     """
-    return pd.read_json(f"data{path}")["result"]
+    return pd.read_json(f"data/{path}")["result"]
 
 
 def get_bike_data(path):
     """
-    Retrieves bike data from a specified URL, filters records for mode type 'bike',
-    and returns the filtered data as a pandas DataFrame.
+    Retrieves bike data from a specified URL, filters records for mode type
+    'bike', and returns the filtered data as a pandas DataFrame.
 
     Parameters:
         URL (str): The URL from which to pull the data.
