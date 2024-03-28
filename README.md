@@ -17,7 +17,7 @@ This repository contains the notebook which explores bicycle related accidents i
 
 ## Usage
 
-To use this repository, clone it to your local machine and run `pip install requirements.txt` to download the required packages. Then, run `comp_essay.ipynb` starting from the first cell.
+To use this repository, clone it to your local machine and run `pip install requirements.txt` to download the required packages. Then run `comp_essay.ipynb` starting from the first cell.
 
 ## Data Source
 
