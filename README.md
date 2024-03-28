@@ -9,10 +9,9 @@ This repository contains the notebook which explores bicycle related accidents i
 - `comp_essay.ipynb`: A Jupyter notebook file with analyses and implementation of the modules.
 - `heatmap.py`: A Python module which creates a heatmap of bike accidents in Boston.
 - `helpers.py`: A Python module to help load in data.
-- `test_helpers.py`: Unit tests for modules.
-- `graphs/`: A directory containing graphs in JPG format that visualize various aspects of the robot's performance.
 - `pyproject.toml`: Config file for pylint black
 - `requirements.txt`: Required packages
+- `test_helpers.py`: Unit tests for modules.
 
 
 ## Usage
