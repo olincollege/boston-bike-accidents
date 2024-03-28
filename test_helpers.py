@@ -2,11 +2,13 @@
 Test module for verifying the functionality of data processing functions.
 
 This module contains test cases for testing the following functions:
-- pull_data: Function to pull data from a specified URL and save it as a JSON file.
+- pull_data: Function to pull data from a specified URL and save it as a JSON
+file.
 - load_data: Function to load data from a JSON file.
 - get_bike_data: Function to extract bike-related data from loaded data.
 
-Each test case is designed to validate the correctness of these functions and ensure they operate as expected.
+Each test case is designed to validate the correctness of these functions and
+ensure they operate as expected.
 
 Attributes:
     TEST_URL (str): The URL from which data is pulled for testing.
@@ -38,6 +40,8 @@ def setup_teardown():
         os.remove(TEST_PATH)
 
 
+# pylint: disable=W0621
+# pylint: disable=W0613
 def test_pull_data(setup_teardown):
     """
     Test case to verify the correctness of the pull_data function.

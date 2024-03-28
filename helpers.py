@@ -36,6 +36,7 @@ def pull_data(url, data_name="data"):
     Returns:
         None
     """
+    # pylint: disable=R1732
     fileobj = urllib.request.urlopen(url)
     response_dict = json.loads(fileobj.read())
     with open(f"data/{data_name}", "w", encoding="utf-8") as file:

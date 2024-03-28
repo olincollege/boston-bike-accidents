@@ -1,0 +1,3 @@
+[ZoneTransfer]
+ZoneId=3
+HostUrl=https://hub.arcgis.com/api/v3/datasets/142500a77e2a4dbeb94a86f7e0b568bc_9/downloads/data?format=geojson&spatialRefId=4326
