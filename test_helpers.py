@@ -30,7 +30,7 @@ TEST_DATA_NAME = "test_data.json"
 TEST_PATH = f"data/{TEST_DATA_NAME}"
 
 
-@pytest.fixture(scope="module")  # pylint: disable=Unused-Argument
+@pytest.fixture(scope="module")
 def setup_teardown():
     """
     Teardown function to remove the file at TEST_PATH if it exists.
@@ -40,6 +40,8 @@ def setup_teardown():
         os.remove(TEST_PATH)
 
 
+# pylint: disable=W0621
+# pylint: disable=W0613
 def test_pull_data(setup_teardown):
     """
     Test case to verify the correctness of the pull_data function.
